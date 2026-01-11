@@ -380,6 +380,64 @@
             opacity: 0;
         }
 
+
+        /* Container Styling */
+.audio-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #ffdde1;
+}
+
+.audio-info i {
+    font-size: 2.5rem;
+    color: #ff4d6d;
+    margin-bottom: 1rem;
+}
+
+.audio-info h3 {
+    margin: 0.5rem 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Audio Player Width */
+.custom-audio {
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 40px;
+}
+
+/* --- Media Queries --- */
+
+/* For Tablets */
+@media (max-width: 768px) {
+    .audio-card {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 480px) {
+    .audio-card {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .audio-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .audio-info i {
+        font-size: 2rem;
+    }
+}
+
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
@@ -414,17 +472,25 @@
 <body>
     <div class="container">
         <header>
-            <h1>For My Dearest Friend ❤️</h1>
+            <h1>For My Cutie Spoorti ❤️</h1>
         </header>
 
         <div class="letter-container">
             <div class="letter" id="typed-text"></div>
         </div>
 
-        <div class="video-container" id="video-message">
-            <!-- Replace with your video embed code -->
-            <iframe src="about:blank" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <div class="audio-card" id="special-message">
+    <div class="audio-info">
+        <i class="fas fa-gift"></i>
+        <h3>A Special Message</h3>
+        <p>Press play to listen</p>
+    </div>
+    <audio controls class="custom-audio">
+        <source src="Songs/Spoorti's Special Birthday Message.mpeg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
 
         <div class="surprise-button-container">
             <button class="surprise-button" id="surprise-button">
@@ -492,7 +558,7 @@
 <audio id="mainAudioPlayer"></audio>
                 <div style="margin-top: 20px;">
                     <a href="#" download class="back-button" style="background: #ffb6c1; border-color: #ffb6c1; color: white;">
-                        <i class="fas fa-download"></i> Download Your Digital Gift
+                         Hope You Like The Surprise 😉❤️
                     </a>
                 </div>
             </div>
@@ -595,7 +661,7 @@
             }, 500);
 
             // Typewriter effect for letter
-            const letterContent = "My dearest friend,\n\nAs I sit here thinking about all our memories together, I can't help but smile. From our late-night talks to our spontaneous adventures, you've filled my life with so much joy and laughter. You've been my shoulder to cry on, my partner in crime, and my biggest supporter.\n\nOn your special day, I want you to know how grateful I am to have you in my life. You make every day brighter just by being you - kind, funny, and incredibly thoughtful.\n\nHappy Birthday to my favorite person in the world! Here's to many more years of friendship, laughter, and creating memories together.\n\nWith all my love,\n[Your Name]";
+            const letterContent = "My dear Spoorti,\n\nAs I sit here thinking about all our memories together, I can't help but smile. From our late-night talks to our whole day textings, you've filled my life with so much joy and happiness. I stll clearly remember the day we met, It's my birthday. We are going to munnar for a trip and you are the last person to join us for the trip, that time I have no idea that anythink such happens to me seems like destiny has some other plans for me. It looks like God and my destiny is send you as my birthday present in my life and trust me you are the best present that I ever received in my whole life. Spoorti, I just want to tell you today that you are perfect, never ever doubt on yourself if you ever feel anything just look at me, talk to me once and you got to know that how much special you are for me. I want you to never think that you are alone, I know you are tired of being strong but now I am here for you. I also want to confess that Everything I feel for you is real. My intentions are pure and I just want to see you happy, as well as making sure you never doubt how deeply loved you are. I know I'm not perfect, and I will never pretend to be, but I promise I will always give you the best of me. Even on the roughest days, I won't walk away. I'm always here and I'm not giving up on you ever. One last thing please always smile you looks very good when you smile , If you ever feel low in your life just came to me, your smile is my responsibility now. I want to write a lot of more thinks but I know that if I start I end up writing a book on you and you won't have any mood of reading a book on your birthday so may be some other day... \n\nMany Many Happy Returns of the day and Happy Birthday to my favorite person in the world! Here's to many more years of love,laughter, and creating memories together.\n\nWith all my love,\nAryan";
             
             new Typed('#typed-text', {
                 strings: [letterContent],
