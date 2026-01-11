@@ -485,10 +485,10 @@
         <h3>A Special Message</h3>
         <p>Press play to listen</p>
     </div>
-    <audio controls class="custom-audio">
-        <source src="Songs/Spoorti's Special Birthday Message.mpeg" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <audio controls class="custom-audio" preload="metadata">
+    <source src="Songs/Spoorti's Special Birthday Message.mpeg" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 </div>
 
 
@@ -654,6 +654,15 @@
 });
 
 //end
+
+const birthdayAudio = document.querySelector('.custom-audio');
+
+// When the audio metadata loads, force it to start at 0
+birthdayAudio.addEventListener('loadedmetadata', () => {
+    birthdayAudio.currentTime = 0;
+});
+
+
         document.addEventListener('DOMContentLoaded', function() {
             // Fade in animation
             setTimeout(() => {
@@ -661,7 +670,7 @@
             }, 500);
 
             // Typewriter effect for letter
-            const letterContent = "My dear Spoorti,\n\nAs I sit here thinking about all our memories together, I can't help but smile. From our late-night talks to our whole day textings, you've filled my life with so much joy and happiness. I stll clearly remember the day we met, It's my birthday. We are going to munnar for a trip and you are the last person to join us for the trip, that time I have no idea that anythink such happens to me seems like destiny has some other plans for me. It looks like God and my destiny is send you as my birthday present in my life and trust me you are the best present that I ever received in my whole life. Spoorti, I just want to tell you today that you are perfect, never ever doubt on yourself if you ever feel anything just look at me, talk to me once and you got to know that how much special you are for me. I want you to never think that you are alone, I know you are tired of being strong but now I am here for you. I also want to confess that Everything I feel for you is real. My intentions are pure and I just want to see you happy, as well as making sure you never doubt how deeply loved you are. I know I'm not perfect, and I will never pretend to be, but I promise I will always give you the best of me. Even on the roughest days, I won't walk away. I'm always here and I'm not giving up on you ever. One last thing please always smile you looks very good when you smile , If you ever feel low in your life just came to me, your smile is my responsibility now. I want to write a lot of more thinks but I know that if I start I end up writing a book on you and you won't have any mood of reading a book on your birthday so may be some other day... \n\nMany Many Happy Returns of the day and Happy Birthday to my favorite person in the world! Here's to many more years of love,laughter, and creating memories together.\n\nWith all my love 💕,\nAryan";
+            const letterContent = "My dear Spoorti,\n\nAs I sit here thinking about all our memories together, I can't help but smile. From our late-night talks to our whole day textings, you've filled my life with so much joy and happiness. I still clearly remember the day we met, It's my birthday. We are going to munnar for a trip and you are the last person to join us for the trip, that time I have no idea that anything such happens to me seems like destiny has some other plans for me. It looks like God and my destiny is send you as my birthday present in my life and trust me you are the best present that I ever received in my whole life. Spoorti, I just want to tell you today that you are perfect, never ever doubt on yourself if you ever feel anything just look at me, talk to me once and you got to know that how much special you are for me. I want you to never think that you are alone, I know you are tired of being strong but now I am here for you. I also want to confess that Everything I feel for you is real. My intentions are pure and I just want to see you happy, as well as making sure you never doubt how deeply loved you are. I know I'm not perfect, and I will never pretend to be, but I promise I will always give you the best of me. Even on the roughest days, I won't walk away. I'm always here and I'm not giving up on you ever. One last thing please always smile you looks very good when you smile , If you ever feel low in your life just came to me, your smile is my responsibility now. I want to write a lot of more thinks but I know that if I start I end up writing a book on you and you won't have any mood of reading a book on your birthday so may be some other day... \n\nMany Many Happy Returns of the day and Happy Birthday to my favorite person in the world! Here's to many more years of love,laughter, and creating memories together.\n\nWith all my love 💕,\nAryan";
             
             new Typed('#typed-text', {
                 strings: [letterContent],
